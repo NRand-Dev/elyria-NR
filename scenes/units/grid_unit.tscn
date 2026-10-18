@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://ibqea1ggdwt5"]
 
-[ext_resource type="Script" uid="uid://dgon0ayc2f4us" path="res://core/grid_unit.gd" id="1_lfwla"]
+[ext_resource type="Script" uid="uid://v4gnrv8emwu3" path="res://core/unit.gd" id="1_lfwla"]
 
-[node name="GridUnit" type="Node2D" unique_id=945373237 node_paths=PackedStringArray("grid")]
+[node name="GridUnit" type="Node2D" unique_id=945373237]
 script = ExtResource("1_lfwla")
-grid = NodePath("")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1139999191]
 offset_right = 16.0

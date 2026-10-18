@@ -1,9 +1,20 @@
-class_name PlayerUnit extends GridUnit
-## Reads input and asks GridUnit to move. Holding a direction repeats,
-## because we retry every frame and try_move only succeeds once the tween ends.
+class_name PlayerUnit extends Unit
+## Reads input. Only acts during the player group's turn.
+## Needs input actions: move_up/down/left/right and pass_turn.
+
+
+func _init() -> void:
+	faction = &"player"
 
 
 func _process(_delta: float) -> void:
+	if not can_act():
+		return
+
+	if Input.is_action_just_pressed("pass_turn"):
+		pass_turn()
+		return
+
 	var dir := Vector2i.ZERO
 	if Input.is_action_pressed("move_up"):
 		dir = Vector2i.UP

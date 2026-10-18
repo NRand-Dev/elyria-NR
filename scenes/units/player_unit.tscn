@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dhk2f3krsic5c"]
 
 [ext_resource type="PackedScene" uid="uid://ibqea1ggdwt5" path="res://scenes/units/grid_unit.tscn" id="1_4wmqy"]
-[ext_resource type="Script" uid="uid://kxy6ivvfaew7" path="res://core/player_unit.gd" id="2_xce43"]
+[ext_resource type="Script" uid="uid://bokjedcsjqbr7" path="res://core/player_unit.gd" id="2_xce43"]
 
 [node name="PlayerUnit" unique_id=945373237 instance=ExtResource("1_4wmqy")]
 script = ExtResource("2_xce43")
+faction = &"player"
+move_range = 4
 
 [node name="ColorRect" parent="." index="0" unique_id=1139999191]
 color = Color(0.63746893, 0.24475631, 0.9452488, 1)
