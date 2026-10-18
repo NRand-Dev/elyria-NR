@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Elyria-NR Playground"
+run/main_scene="uid://cxi48unaebr3a"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dhk2f3krsic5c"]
+
+[ext_resource type="PackedScene" uid="uid://ibqea1ggdwt5" path="res://scenes/units/grid_unit.tscn" id="1_4wmqy"]
+[ext_resource type="Script" uid="uid://kxy6ivvfaew7" path="res://core/player_unit.gd" id="2_xce43"]
+
+[node name="PlayerUnit" unique_id=945373237 instance=ExtResource("1_4wmqy")]
+script = ExtResource("2_xce43")
+
+[node name="ColorRect" parent="." index="0" unique_id=1139999191]
+color = Color(0.63746893, 0.24475631, 0.9452488, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." index="1" unique_id=1884200955]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
