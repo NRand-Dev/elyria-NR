@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://janswqd25pqc"]
+
+[ext_resource type="Script" uid="uid://cxs4wypfm7wb3" path="res://scenes/units/enemies/enemy_unit.gd" id="1_ap6ks"]
+
+[node name="EnemyUnit" type="Node2D" unique_id=945373237]
+script = ExtResource("1_ap6ks")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1139999191]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.892117, 0.014779413, 0.44347408, 1)

@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cdafoys8uutoe" path="res://assets/Fantasy/Tileset/Nature/A2_Nature_Rasak.png" id="1_ybdod"]
 [ext_resource type="Script" uid="uid://c1cwtewnwyt8f" path="res://core/grid.gd" id="2_38prr"]
 [ext_resource type="Script" uid="uid://2mntmpj0gpd7" path="res://core/turn_manager.gd" id="2_a3b3n"]
-[ext_resource type="PackedScene" uid="uid://dhk2f3krsic5c" path="res://scenes/units/player_unit.tscn" id="3_a3b3n"]
-[ext_resource type="PackedScene" uid="uid://ibqea1ggdwt5" path="res://scenes/units/grid_unit.tscn" id="4_qoqmi"]
+[ext_resource type="PackedScene" uid="uid://dhk2f3krsic5c" path="res://scenes/units/player/player_unit.tscn" id="3_a3b3n"]
+[ext_resource type="PackedScene" uid="uid://janswqd25pqc" path="res://scenes/units/enemies/enemy_unit.tscn" id="5_a3b3n"]
+[ext_resource type="Script" uid="uid://rdvyim3vflkb" path="res://scenes/ui/range_overlay.gd" id="6_pjele"]
+[ext_resource type="Script" uid="uid://dptqior4ve2xk" path="res://scenes/ui/turn_label.gd" id="7_ibx7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2s55i"]
 texture = ExtResource("1_ybdod")
@@ -2370,17 +2372,31 @@ metadata/_custom_type_script = "uid://2mntmpj0gpd7"
 script = ExtResource("2_38prr")
 ground = NodePath("../Ground")
 
-[node name="GridUnit" parent="." unique_id=945373237 node_paths=PackedStringArray("grid") instance=ExtResource("4_qoqmi")]
-position = Vector2(343, 132)
-grid = NodePath("../Grid")
-start_cell = Vector2i(6, 8)
-
-[node name="GridUnit2" parent="." unique_id=1701215659 node_paths=PackedStringArray("grid") instance=ExtResource("4_qoqmi")]
-position = Vector2(343, 132)
-grid = NodePath("../Grid")
-start_cell = Vector2i(10, 6)
-
 [node name="PlayerUnit" parent="." unique_id=967192698 node_paths=PackedStringArray("grid") instance=ExtResource("3_a3b3n")]
 position = Vector2(343, 132)
 grid = NodePath("../Grid")
-start_cell = Vector2i(10, 4)
+start_cell = Vector2i(4, 4)
+
+[node name="EnemyUnit" parent="." unique_id=945373237 node_paths=PackedStringArray("grid") instance=ExtResource("5_a3b3n")]
+grid = NodePath("../Grid")
+start_cell = Vector2i(6, 8)
+
+[node name="EnemyUnit2" parent="." unique_id=1418715900 node_paths=PackedStringArray("grid") instance=ExtResource("5_a3b3n")]
+grid = NodePath("../Grid")
+start_cell = Vector2i(10, 6)
+
+[node name="RangeOverlay" type="Node2D" parent="." unique_id=1189663987 node_paths=PackedStringArray("grid", "unit")]
+script = ExtResource("6_pjele")
+grid = NodePath("../Grid")
+unit = NodePath("../PlayerUnit")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=419518309]
+
+[node name="TurnLabel" type="Label" parent="CanvasLayer" unique_id=2142290363 node_paths=PackedStringArray("turn_manager")]
+offset_left = 48.0
+offset_top = 31.0
+offset_right = 88.0
+offset_bottom = 54.0
+text = "Test Text"
+script = ExtResource("7_ibx7c")
+turn_manager = NodePath("../../TurnManager")
